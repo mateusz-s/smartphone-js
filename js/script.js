@@ -12,10 +12,12 @@ Smartphone.prototype.printInfo = function () {
 Smartphone.prototype.printScreenInfo = function () {
     var screenInfo = '';
     for (var i = 0; i < this.screen.length; i++) {
-        if (i == 0) {
-            screenInfo += 'Telefon ma wyświetlacz o przekątnej ' + this.screen[i];
-        } else {
-            screenInfo += ' i rozdzielczości ' + this.screen[i] + ' px.';
+        switch (i) {
+            case 0:
+                screenInfo += 'Telefon ma wyświetlacz o przekątnej ' + this.screen[i];
+                break;
+            case 1:
+                screenInfo += ' i rozdzielczości ' + this.screen[i] + ' px.';
         }
     }
     console.log(screenInfo);
